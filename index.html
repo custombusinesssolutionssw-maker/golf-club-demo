@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GOLF CLUB — Golf, Dining &amp; Celebrations</title>
+<meta name="description" content="GOLF CLUB — an eighteen-hole parkland course with clubhouse dining, membership and function spaces for weddings, celebrations and corporate events.">
+<meta name="theme-color" content="#12261C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fairway-950:#12261C;
+    --fairway-800:#1F4430;
+    --fairway-700:#2A5539;
+    --fairway-600:#3C6B4C;
+    --brass-600:#9C7A3B;
+    --brass-500:#B8924B;
+    --brass-300:#D9BD86;
+    --chalk-100:#F7F4EC;
+    --chalk-200:#EFE9D8;
+    --chalk-300:#E4DAC0;
+    --ink:#1C1E19;
+    --ink-muted:#5C5A4E;
+    --ivory:#F6F1E4;
+    --line:rgba(28,30,25,.12);
+    --shadow-sm:0 1px 3px rgba(18,38,28,.12);
+    --shadow-md:0 20px 44px -18px rgba(18,38,28,.45);
+    --radius-sm:10px;
+    --radius-md:18px;
+    --radius-lg:30px;
+    --container:1180px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+
+  /* ===== RESET ===== */
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:100px;}
+  body{margin:0;font-family:'Karla',system-ui,sans-serif;color:var(--ink);background:var(--chalk-100);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer;}
+  h1,h2,h3,h4{font-family:'Source Serif 4',Georgia,serif;font-weight:600;line-height:1.16;margin:0 0 .5em;color:var(--fairway-950);}
+  p{margin:0 0 1em;}
+  ul{margin:0;padding:0;list-style:none;}
+  input,select,textarea{font-family:'Karla',sans-serif;}
+  .container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:24px;}
+  section{padding:100px 0;position:relative;}
+  .section-alt{background:var(--chalk-200);}
+  @media (max-width:640px){section{padding:72px 0;}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+  }
+
+  /* ===== TYPE UTILITIES ===== */
+  .eyebrow{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--brass-600);display:inline-block;margin-bottom:.9em;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head.center{margin-inline:auto;text-align:center;}
+  .section-head h2{font-size:clamp(1.9rem,1.5rem + 1.6vw,2.7rem);}
+  .section-head p{color:var(--ink-muted);font-size:1.06rem;max-width:56ch;}
+  .section-head.center p{margin-inline:auto;}
+
+  /* ===== BUTTONS & LINKS ===== */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:999px;font-weight:600;font-size:.95rem;letter-spacing:.01em;transition:transform .25s var(--ease),background .25s,border-color .25s,color .25s,box-shadow .25s;border:1.5px solid transparent;white-space:nowrap;}
+  .btn-sm{padding:10px 20px;font-size:.85rem;}
+  .btn-lg{padding:17px 36px;font-size:1rem;}
+  .btn-primary{background:var(--brass-500);color:var(--fairway-950);}
+  .btn-primary:hover{background:var(--brass-300);transform:translateY(-2px);box-shadow:var(--shadow-sm);}
+  .btn-outline{border-color:var(--fairway-700);color:var(--fairway-800);}
+  .btn-outline:hover{background:var(--fairway-800);color:var(--ivory);transform:translateY(-2px);}
+  .btn-outline-light{border-color:rgba(246,241,228,.5);color:var(--ivory);background:rgba(246,241,228,.06);}
+  .btn-outline-light:hover{background:rgba(246,241,228,.16);transform:translateY(-2px);}
+  .card-link{color:var(--fairway-700);font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:6px;transition:gap .2s,color .2s;}
+  .card-link:hover{color:var(--brass-600);gap:11px;}
+  .card-link svg{width:15px;height:15px;flex-shrink:0;}
+  .icon-check{color:var(--fairway-600);flex-shrink:0;margin-top:3px;}
+
+  /* ===== HEADER ===== */
+  .site-header{position:fixed;top:0;left:0;right:0;z-index:60;padding:22px 0;transition:background .3s var(--ease),padding .3s var(--ease),box-shadow .3s;}
+  .site-header.scrolled{background:rgba(18,38,28,.94);backdrop-filter:blur(10px);padding:13px 0;box-shadow:var(--shadow-sm);}
+  .header-inner{max-width:var(--container);margin-inline:auto;padding-inline:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .logo{font-family:'Cinzel',serif;font-weight:700;font-size:1.3rem;letter-spacing:.09em;color:var(--ivory);flex-shrink:0;}
+  .main-nav{display:flex;align-items:center;gap:36px;}
+  .nav-links{display:flex;gap:28px;}
+  .nav-links a{color:var(--ivory);font-size:.92rem;font-weight:600;opacity:.88;position:relative;padding:4px 0;}
+  .nav-links a:hover{opacity:1;}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:-3px;width:0;height:1.5px;background:var(--brass-500);transition:width .3s var(--ease);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-utility{display:flex;align-items:center;gap:18px;}
+  .status-pill{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:600;color:rgba(246,241,228,.85);white-space:nowrap;}
+  .status-dot{width:7px;height:7px;border-radius:50%;background:#7CB88F;box-shadow:0 0 0 3px rgba(124,184,143,.25);}
+  .header-phone{display:flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;color:var(--ivory);white-space:nowrap;}
+  .header-phone svg{color:var(--brass-500);flex-shrink:0;}
+  .nav-actions{display:flex;gap:12px;}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;padding:8px;}
+  .nav-toggle span{width:24px;height:2px;background:var(--ivory);transition:transform .3s,opacity .3s;}
+  .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.active span:nth-child(2){opacity:0;}
+  .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  @media (max-width:1150px){
+    .status-pill,.header-phone{display:none;}
+  }
+  @media (max-width:900px){
+    .main-nav{position:fixed;inset:0;background:var(--fairway-950);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform .45s var(--ease),opacity .3s;}
+    .main-nav.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+    .nav-links{flex-direction:column;align-items:center;gap:26px;}
+    .nav-links a{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:600;}
+    .nav-utility{display:none;}
+    .nav-actions{flex-direction:column;gap:16px;margin-top:6px;}
+    .nav-toggle{display:flex;z-index:70;}
+    body.nav-open{overflow:hidden;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;}
+  .hero-media{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.04);}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(185deg,rgba(18,38,28,.5) 0%,rgba(18,38,28,.68) 50%,rgba(18,38,28,.94) 100%);}
+  .hero-content{position:relative;z-index:2;max-width:var(--container);margin-inline:auto;padding:150px 24px 90px;color:var(--ivory);animation:heroFade 1s var(--ease) both;}
+  @keyframes heroFade{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+  .hero-content .eyebrow{color:var(--brass-300);}
+  .hero-content h1{color:var(--ivory);font-size:clamp(2.3rem,1.6rem + 3.1vw,4.2rem);max-width:840px;}
+  .hero-sub{max-width:540px;font-size:1.14rem;color:rgba(246,241,228,.86);}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;}
+
+  /* ===== STATS BAR ===== */
+  .stats-bar{background:var(--fairway-950);padding:30px 0;}
+  .stats-inner{max-width:var(--container);margin-inline:auto;padding-inline:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:22px;}
+  .stat{display:flex;align-items:center;gap:12px;color:var(--ivory);font-size:.92rem;font-weight:700;flex:1 1 210px;}
+  .stat svg{flex-shrink:0;color:var(--brass-500);}
+
+  /* ===== ABOUT ===== */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center;}
+  .about-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-md);}
+  .about-media img{width:100%;height:100%;object-fit:cover;}
+  .about-list{margin-top:26px;display:grid;gap:15px;}
+  .about-list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink);font-weight:600;font-size:.98rem;}
+  @media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px;}.about-media{aspect-ratio:16/10;}}
+
+  /* ===== INFO CARDS (Course / Academy / Pro Shop) ===== */
+  .card-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .info-card{background:var(--chalk-100);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .35s var(--ease),box-shadow .35s;}
+  .info-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+  .info-card .card-media{aspect-ratio:4/3;overflow:hidden;}
+  .info-card .card-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+  .info-card:hover .card-media img{transform:scale(1.07);}
+  .info-card .card-body{padding:30px;}
+  .info-card h3{font-size:1.3rem;}
+  .info-card p{color:var(--ink-muted);font-size:.96rem;}
+  @media (max-width:900px){.card-grid-3{grid-template-columns:1fr;max-width:460px;margin-inline:auto;}}
+
+  /* ===== MEMBERSHIP ===== */
+  .membership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .tier-card{background:var(--fairway-950);color:var(--ivory);border-radius:var(--radius-md);padding:38px 32px;display:flex;flex-direction:column;gap:18px;position:relative;}
+  .tier-card.featured{background:linear-gradient(165deg,var(--fairway-800),var(--fairway-950));border:1.5px solid var(--brass-500);}
+  .tier-card.featured::before{content:'Most Popular';position:absolute;top:-13px;left:32px;background:var(--brass-500);color:var(--fairway-950);font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 14px;border-radius:999px;}
+  .tier-card h3{color:var(--ivory);font-size:1.4rem;margin-bottom:0;}
+  .tier-card .tier-tagline{color:rgba(246,241,228,.7);font-size:.9rem;margin:0;}
+  .tier-card ul{display:grid;gap:11px;margin:6px 0;flex:1;}
+  .tier-card ul li{display:flex;gap:10px;font-size:.92rem;color:rgba(246,241,228,.86);}
+  .tier-card ul li svg{color:var(--brass-500);flex-shrink:0;margin-top:2px;}
+  @media (max-width:900px){.membership-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto;}}
+
+  /* ===== WEDDINGS GALLERY ===== */
+  .wedding-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:44px 0 40px;}
+  .wedding-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-sm);}
+  @media (max-width:700px){.wedding-gallery{grid-template-columns:repeat(2,1fr);}}
+
+  /* ===== DINING ===== */
+  .dining-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .dining-media{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow-md);}
+  .dining-media img{width:100%;height:100%;object-fit:cover;}
+  @media (max-width:860px){.dining-grid{grid-template-columns:1fr;gap:36px;}.dining-grid .dining-media{order:-1;}}
+
+  /* ===== GALLERY ===== */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;grid-auto-flow:dense;gap:16px;}
+  .gallery-grid .g-item{border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;position:relative;display:block;width:100%;height:100%;}
+  .gallery-grid .g-item:first-child{grid-column:span 2;grid-row:span 2;}
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease);}
+  .gallery-grid .g-item:hover img{transform:scale(1.08);}
+  @media (max-width:760px){.gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}.gallery-grid .g-item:first-child{grid-column:span 2;grid-row:span 1;}}
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .testimonial-card{background:var(--chalk-100);border:1px solid var(--line);border-radius:var(--radius-md);padding:34px;display:flex;flex-direction:column;gap:16px;}
+  .stars{color:var(--brass-500);letter-spacing:2px;font-size:.95rem;}
+  .testimonial-card .quote{font-family:'Source Serif 4',serif;font-size:1.08rem;font-style:italic;color:var(--fairway-950);flex:1;margin:0;}
+  .testimonial-author{display:flex;align-items:center;gap:12px;}
+  .avatar-circle{width:42px;height:42px;border-radius:50%;background:var(--fairway-800);color:var(--brass-300);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:600;flex-shrink:0;}
+  .testimonial-author .t-name{font-weight:700;font-size:.9rem;color:var(--ink);}
+  @media (max-width:900px){.testimonial-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto;}}
+
+  /* ===== CONTOUR SIGNATURE (decorative topographic lines) ===== */
+  .contour-deco{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+  .contour-deco path{fill:none;stroke:var(--brass-500);stroke-width:1;opacity:.14;}
+
+  /* ===== ENQUIRY ===== */
+  .enquire-section{background:var(--fairway-950);color:var(--ivory);overflow:hidden;}
+  .enquire-section .section-head .eyebrow{color:var(--brass-300);}
+  .enquire-section .section-head h2{color:var(--ivory);}
+  .enquire-section .section-head p{color:rgba(246,241,228,.75);}
+  .enquire-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:start;}
+  .enquiry-form{background:var(--chalk-100);border-radius:var(--radius-lg);padding:42px;color:var(--ink);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+  .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+  .form-group:last-of-type{margin-bottom:0;}
+  label{font-size:.83rem;font-weight:700;color:var(--fairway-800);}
+  input,select,textarea{padding:12px 14px;border-radius:8px;border:1.5px solid var(--chalk-300);background:#fff;color:var(--ink);transition:border-color .2s;width:100%;}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--fairway-600);}
+  textarea{resize:vertical;min-height:110px;}
+  .enquiry-form .btn{width:100%;margin-top:4px;}
+  .form-note{font-size:.8rem;color:var(--ink-muted);text-align:center;margin:14px 0 0;}
+  .enquiry-success{background:var(--chalk-100);border-radius:var(--radius-lg);padding:56px 44px;color:var(--fairway-950);text-align:center;}
+  .enquiry-success h3{font-size:1.5rem;}
+  .enquiry-success p{color:var(--ink-muted);}
+  .contact-aside{display:grid;gap:30px;position:relative;z-index:1;}
+  .contact-block h4{color:var(--brass-300);font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .contact-block p{color:rgba(246,241,228,.86);font-size:.95rem;margin:0 0 6px;}
+  .contact-block a{color:rgba(246,241,228,.86);}
+  .contact-block a:hover{color:var(--brass-300);}
+  .contact-line{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
+  .contact-line svg{color:var(--brass-500);flex-shrink:0;}
+  @media (max-width:900px){.enquire-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.enquiry-form{padding:30px 24px;}}
+
+  /* ===== FOOTER ===== */
+  .site-footer{background:var(--fairway-950);color:rgba(246,241,228,.75);padding-top:76px;border-top:1px solid rgba(246,241,228,.08);position:relative;overflow:hidden;}
+  .footer-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:40px;padding-bottom:52px;}
+  .footer-brand .logo{font-size:1.25rem;}
+  .footer-brand p{font-size:.9rem;margin-top:16px;max-width:280px;color:rgba(246,241,228,.65);}
+  .social-row{display:flex;gap:12px;margin-top:22px;}
+  .social-row a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(246,241,228,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:.85rem;transition:background .2s,border-color .2s;}
+  .social-row a:hover{background:rgba(246,241,228,.1);border-color:var(--brass-500);}
+  .footer-col h5{color:var(--ivory);font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.09em;text-transform:uppercase;margin-bottom:18px;}
+  .footer-col ul{display:grid;gap:11px;}
+  .footer-col a,.footer-col p{font-size:.9rem;color:rgba(246,241,228,.7);}
+  .footer-col a:hover{color:var(--brass-300);}
+  .footer-bottom{position:relative;z-index:1;border-top:1px solid rgba(246,241,228,.08);padding:22px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(246,241,228,.5);}
+  @media (max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:520px){.footer-grid{grid-template-columns:1fr;}}
+
+  /* ===== LIGHTBOX ===== */
+  .lightbox{position:fixed;inset:0;background:rgba(10,18,14,.94);z-index:200;display:flex;align-items:center;justify-content:center;padding:40px;}
+  .lightbox[hidden]{display:none;}
+  .lightbox img{max-width:100%;max-height:100%;border-radius:8px;}
+  .lightbox-close{position:absolute;top:22px;right:26px;color:#fff;font-size:2.1rem;line-height:1;}
+
+  /* ===== TOAST ===== */
+  .toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);background:var(--fairway-950);color:var(--ivory);padding:14px 26px;border-radius:999px;font-size:.88rem;font-weight:600;box-shadow:var(--shadow-md);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:300;max-width:88vw;text-align:center;}
+  .toast.show{opacity:1;transform:translate(-50%,0);}
+
+  /* ===== REVEAL ON SCROLL ===== */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  .reveal.is-visible{opacity:1;transform:none;}
+</style>
+</head>
+<body id="top">
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#top" class="logo">GOLF CLUB</a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <div class="nav-links">
+          <a href="#course">The Course</a>
+          <a href="#membership">Membership</a>
+          <a href="#weddings">Weddings &amp; Events</a>
+          <a href="#dining">Dining</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#enquire">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="btn btn-outline-light btn-sm js-booking-link">Book a Tee Time</a>
+          <a href="#enquire" class="btn btn-primary btn-sm">Enquire Now</a>
+        </div>
+      </nav>
+
+      <div class="nav-utility">
+        <span class="status-pill"><span class="status-dot"></span>Course Open</span>
+        <a class="header-phone" href="tel:+441656123456">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h4l2 5-2.5 2A12 12 0 0 0 13 16.5l2-2.5 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg>
+          01656 123 456
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <!-- Once drone footage is filmed, swap this div for a full-bleed video, e.g.
+      <video class="hero-media" autoplay muted loop playsinline poster="fallback-image.jpg">
+        <source src="course-flythrough.mp4" type="video/mp4">
+      </video>
+      .hero-overlay and .hero-content below don't need to change — only this media layer does. -->
+      <div class="hero-media" style="background-image:url('https://picsum.photos/seed/golfclubhero/1920/1080')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="eyebrow">Parkland Golf · Clubhouse · Celebrations</span>
+        <h1>Golf, Hospitality &amp; Celebrations, All in One Place</h1>
+        <p class="hero-sub">Eighteen holes of parkland golf, a clubhouse built for weddings and private events, and membership for every kind of golfer.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary btn-lg js-booking-link">Book a Tee Time</a>
+          <a href="#enquire" class="btn btn-outline-light btn-lg">Make an Enquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS BAR ===== -->
+    <section class="stats-bar" style="padding:30px 0;">
+      <div class="stats-inner">
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><line x1="5" y1="21" x2="5" y2="3"/><path d="M5 4 L18 4 L14.5 8 L18 12 L5 12"/></svg>
+          <span>18-Hole Parkland Course</span>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M6 3h12l-1.2 7.5a4.8 4.8 0 0 1-9.6 0L6 3z"/><line x1="12" y1="15" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          <span>Function Suite for 150 Guests</span>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="7" r="4"/><path d="M12 11v6"/><path d="M7 21c0-2.5 2-4 5-4s5 1.5 5 4"/></svg>
+          <span>Academy &amp; Pro Shop On-Site</span>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><polyline points="8 15 11 18 16 13"/></svg>
+          <span>Enquiries Answered Within 24 Hours</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-media reveal">
+            <img src="https://picsum.photos/seed/golfclubabout/900/1125" alt="Clubhouse and course grounds at Golf Club">
+          </div>
+          <div>
+            <span class="eyebrow">Welcome</span>
+            <h2>A Club Built Around Golf, Hospitality and People</h2>
+            <p>Golf Club has been welcoming golfers, diners and celebrations for years. Whether you're playing a quiet nine holes, bringing a society for the day, or planning a wedding reception, the same team looks after all of it.</p>
+            <ul class="about-list">
+              <li><svg class="icon-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Eighteen holes of well-maintained parkland golf</li>
+              <li><svg class="icon-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>A clubhouse restaurant and bar open to members and visitors</li>
+              <li><svg class="icon-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Function spaces for weddings, parties and corporate days</li>
+              <li><svg class="icon-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Membership for every stage of the game</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COURSE / ACADEMY / PRO SHOP ===== -->
+    <section class="section-alt" id="course">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Golf</span>
+          <h2>The Course, Academy &amp; Pro Shop</h2>
+          <p>Everything to do with your golf, in one place — and every link below actually goes somewhere.</p>
+        </div>
+        <div class="card-grid-3">
+          <div class="info-card" id="the-course">
+            <div class="card-media"><img src="https://picsum.photos/seed/golfclubcourse/700/525" alt="The course at Golf Club"></div>
+            <div class="card-body">
+              <h3>The Course</h3>
+              <p>Eighteen holes shaped by the natural contours of the land, kept in excellent condition throughout the year. Visitor tee times are welcome every day of the week.</p>
+              <a href="#" class="card-link js-booking-link">Book a Tee Time
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="info-card" id="golf-academy">
+            <div class="card-media"><img src="https://picsum.photos/seed/golfclubacademy/700/525" alt="Golf Academy coaching session"></div>
+            <div class="card-body">
+              <h3>Golf Academy</h3>
+              <p>PGA-qualified coaching for every level, from a first lesson to fine-tuning your short game, plus regular clinics for juniors and beginners.</p>
+              <button type="button" class="card-link" data-enquiry-type="golf">Enquire About Lessons
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="info-card" id="pro-shop">
+            <div class="card-media"><img src="https://picsum.photos/seed/golfclubproshop/700/525" alt="Inside the Pro Shop at Golf Club"></div>
+            <div class="card-body">
+              <h3>Pro Shop</h3>
+              <p>Fully stocked with equipment, clothing and accessories from leading golf brands, with expert advice and club-fitting on hand.</p>
+              <button type="button" class="card-link" data-enquiry-type="golf">Contact the Pro Shop
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEMBERSHIP ===== -->
+    <section id="membership">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Join</span>
+          <h2>Membership for Every Kind of Golfer</h2>
+          <p>Three ways to belong to Golf Club, from full playing rights to purely social.</p>
+        </div>
+        <div class="membership-grid">
+          <div class="tier-card">
+            <h3>Social Membership</h3>
+            <p class="tier-tagline">For the clubhouse, without the golf</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Clubhouse &amp; bar access</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Invitations to member events</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Discounted function hire</li>
+            </ul>
+            <button type="button" class="btn btn-outline-light btn-sm" data-enquiry-type="membership">Enquire About This Membership</button>
+          </div>
+          <div class="tier-card featured">
+            <h3>Full Membership</h3>
+            <p class="tier-tagline">Unrestricted golf, all year round</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited tee times</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority booking window</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Clubhouse &amp; dining discounts</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Annual guest day allowance</li>
+            </ul>
+            <button type="button" class="btn btn-outline-light btn-sm" data-enquiry-type="membership">Enquire About This Membership</button>
+          </div>
+          <div class="tier-card">
+            <h3>Intermediate &amp; Junior</h3>
+            <p class="tier-tagline">For golfers under 30, at a reduced rate</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unrestricted course access</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Reduced green fees for guests</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Discounted Academy coaching</li>
+            </ul>
+            <button type="button" class="btn btn-outline-light btn-sm" data-enquiry-type="membership">Enquire About This Membership</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WEDDINGS & EVENTS ===== -->
+    <section class="section-alt" id="weddings">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Weddings, Parties &amp; Corporate Events</span>
+          <h2>Celebrations, Done Properly</h2>
+          <p>From wedding breakfasts to evening receptions, society dinners to corporate away-days, our function suite adapts to whatever you're planning — with in-house catering, dedicated event coordination and the course as your backdrop.</p>
+        </div>
+        <div class="wedding-gallery reveal">
+          <img src="https://picsum.photos/seed/golfclubwed1/700/525" alt="Function suite set for a wedding breakfast">
+          <img src="https://picsum.photos/seed/golfclubwed2/700/525" alt="Table setting with fresh flowers">
+          <img src="https://picsum.photos/seed/golfclubwed3/700/525" alt="Evening reception in the function suite">
+          <img src="https://picsum.photos/seed/golfclubwed4/700/525" alt="The course as a backdrop for photographs">
+          <img src="https://picsum.photos/seed/golfclubwed5/700/525" alt="Clubhouse terrace set up for a drinks reception">
+          <img src="https://picsum.photos/seed/golfclubwed6/700/525" alt="Function suite ready for a corporate event">
+        </div>
+        <button type="button" class="btn btn-outline" data-enquiry-type="weddings">Enquire About Weddings &amp; Events</button>
+      </div>
+    </section>
+
+    <!-- ===== DINING ===== -->
+    <section id="dining">
+      <div class="container">
+        <div class="dining-grid">
+          <div>
+            <span class="eyebrow">The Clubhouse</span>
+            <h2>Dining, Open to Everyone</h2>
+            <p>Our restaurant and bar serve breakfast through to dinner, with a terrace looking out over the course. Members and visitors are equally welcome, and we're always happy to take bookings for larger groups.</p>
+            <button type="button" class="btn btn-outline" data-enquiry-type="dining">Book a Table</button>
+          </div>
+          <div class="dining-media reveal">
+            <img src="https://picsum.photos/seed/golfclubdining/900/700" alt="The clubhouse restaurant and terrace">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="section-alt" id="gallery">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Gallery</span>
+          <h2>Around the Club</h2>
+          <p>A look at the course, the clubhouse, and a few of the days we've helped host. Click any photo for a closer look.</p>
+        </div>
+        <div class="gallery-grid reveal">
+          <button type="button" class="g-item" data-full="https://picsum.photos/seed/golfclubgallery1/1600/1200"><img src="https://picsum.photos/seed/golfclubgallery1/900/900" alt="Aerial view of the course"></button>
+          <button type="button" class="g-item" data-full="https://picsum.photos/seed/golfclubgallery2/1600/1200"><img src="https://picsum.photos/seed/golfclubgallery2/700/525" alt="The clubhouse terrace"></button>
+          <button type="button" class="g-item" data-full="https://picsum.photos/seed/golfclubgallery3/1600/1200"><img src="https://picsum.photos/seed/golfclubgallery3/700/525" alt="1st tee in early morning light"></button>
+          <button type="button" class="g-item" data-full="https://picsum.photos/seed/golfclubgallery4/1600/1200"><img src="https://picsum.photos/seed/golfclubgallery4/700/525" alt="Practice green and academy area"></button>
+          <button type="button" class="g-item" data-full="https://picsum.photos/seed/golfclubgallery5/1600/1200"><img src="https://picsum.photos/seed/golfclubgallery5/700/525" alt="Function suite set for an event"></button>
+          <button type="button" class="g-item" data-full="https://picsum.photos/seed/golfclubgallery6/1600/1200"><img src="https://picsum.photos/seed/golfclubgallery6/700/525" alt="Inside the Pro Shop"></button>
+          <button type="button" class="g-item" data-full="https://picsum.photos/seed/golfclubgallery7/1600/1200"><img src="https://picsum.photos/seed/golfclubgallery7/700/525" alt="Course in autumn colour"></button>
+          <button type="button" class="g-item" data-full="https://picsum.photos/seed/golfclubgallery8/1600/1200"><img src="https://picsum.photos/seed/golfclubgallery8/700/525" alt="Clubhouse lounge and bar"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">What People Say</span>
+          <h2>The Reviews Do the Talking</h2>
+        </div>
+        <div class="testimonial-grid reveal">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"Course conditions were excellent and the welcome from the pro shop set the tone for a great day out."</p>
+            <div class="testimonial-author">
+              <div class="avatar-circle">S</div>
+              <div class="t-name">Society Day Organiser</div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"Our reception in the function suite was everything we hoped for — the team thought of details we hadn't."</p>
+            <div class="testimonial-author">
+              <div class="avatar-circle">W</div>
+              <div class="t-name">Wedding Client, 2025</div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"I've been a member for years. It's the friendliest clubhouse I know, and the course keeps getting better."</p>
+            <div class="testimonial-author">
+              <div class="avatar-circle">M</div>
+              <div class="t-name">Long-Standing Member</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ENQUIRY ===== -->
+    <section class="enquire-section" id="enquire">
+      <svg class="contour-deco" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <path d="M -50 100 C 150 50, 300 150, 500 90 C 650 50, 750 130, 950 70"/>
+        <path d="M -50 180 C 180 140, 320 220, 520 170 C 680 130, 780 200, 950 150"/>
+        <path d="M -50 380 C 200 420, 350 340, 550 390 C 700 430, 800 360, 950 400"/>
+        <path d="M -50 450 C 220 480, 380 420, 580 460 C 720 490, 820 430, 950 460"/>
+      </svg>
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Make an Enquiry</h2>
+          <p>Whatever brings you to Golf Club — a round of golf, a wedding, membership or a corporate day — tell us about it below and we'll come back to you, usually within one working day.</p>
+        </div>
+        <div class="enquire-grid">
+          <div>
+            <div id="enquiryFormWrap">
+              <form class="enquiry-form" id="enquiryForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="enquiryName">Full Name</label>
+                    <input type="text" id="enquiryName" name="name" required autocomplete="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="enquiryEmail">Email Address</label>
+                    <input type="email" id="enquiryEmail" name="email" required autocomplete="email">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="enquiryPhone">Phone Number</label>
+                    <input type="tel" id="enquiryPhone" name="phone" autocomplete="tel">
+                  </div>
+                  <div class="form-group">
+                    <label for="enquiryType">I'm Enquiring About</label>
+                    <select id="enquiryType" name="enquiryType">
+                      <option value="general">General Enquiry</option>
+                      <option value="golf">Tee Times &amp; Golf</option>
+                      <option value="membership">Membership</option>
+                      <option value="weddings">Weddings &amp; Functions</option>
+                      <option value="corporate">Corporate &amp; Conferences</option>
+                      <option value="dining">Dining</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="enquiryDate">Preferred Date (if relevant)</label>
+                  <input type="date" id="enquiryDate" name="preferredDate">
+                </div>
+                <div class="form-group">
+                  <label for="enquiryMessage">Message</label>
+                  <textarea id="enquiryMessage" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Send Enquiry</button>
+                <p class="form-note">We'll only use these details to respond to your enquiry.</p>
+              </form>
+            </div>
+            <div class="enquiry-success" id="enquirySuccess" tabindex="-1" hidden>
+              <h3>Thank you — your enquiry is on its way</h3>
+              <p>A member of the team will come back to you within one working day. For anything urgent, call us on <a href="tel:+441656123456" style="color:var(--fairway-800);">01656 123 456</a>.</p>
+              <button type="button" class="btn btn-outline" id="enquiryReset">Send Another Enquiry</button>
+            </div>
+          </div>
+          <div class="contact-aside reveal">
+            <div class="contact-block">
+              <h4>Visit Us</h4>
+              <div class="contact-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+                <span>Clubhouse Lane, Fairfield, South Wales, CF00 0AA</span>
+              </div>
+            </div>
+            <div class="contact-block">
+              <h4>Call or Email</h4>
+              <div class="contact-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M4 4h4l2 5-2.5 2A12 12 0 0 0 13 16.5l2-2.5 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg>
+                <a href="tel:+441656123456">01656 123 456</a>
+              </div>
+              <div class="contact-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+                <a href="mailto:info@golfclub.co.uk">info@golfclub.co.uk</a>
+              </div>
+            </div>
+            <div class="contact-block">
+              <h4>Opening Hours</h4>
+              <div class="contact-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
+                <span>Course: 7am – Dusk, Daily</span>
+              </div>
+              <div class="contact-line" style="margin-left:26px;">
+                <span>Clubhouse: 8am – 11pm, Daily</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <svg class="contour-deco" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <path d="M -50 60 C 160 20, 300 100, 500 50 C 660 15, 760 90, 950 40"/>
+      <path d="M -50 140 C 190 190, 340 120, 540 165 C 690 200, 790 130, 950 170"/>
+    </svg>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="logo">GOLF CLUB</a>
+          <p>Eighteen holes of parkland golf, a clubhouse built for celebrations, and membership for every kind of golfer.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">X</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Golf</h5>
+          <ul>
+            <li><a href="#the-course">The Course</a></li>
+            <li><a href="#golf-academy">Golf Academy</a></li>
+            <li><a href="#pro-shop">Pro Shop</a></li>
+            <li><a href="#membership">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <ul>
+            <li><a href="#weddings">Weddings &amp; Events</a></li>
+            <li><a href="#dining">Dining</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#enquire">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><p style="margin:0;">Clubhouse Lane, Fairfield<br>South Wales, CF00 0AA</p></li>
+            <li><a href="tel:+441656123456">01656 123 456</a></li>
+            <li><a href="mailto:info@golfclub.co.uk">info@golfclub.co.uk</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Golf Club. All rights reserved.</span>
+        <span>Site by Tenet Digital Services</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+<script>
+  // Mobile nav toggle
+  try {
+    var navToggle = document.getElementById('navToggle');
+    var mainNav = document.getElementById('mainNav');
+    navToggle.addEventListener('click', function () {
+      var isOpen = mainNav.classList.toggle('open');
+      navToggle.classList.toggle('active', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mainNav.classList.remove('open');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  } catch (e) { console.error('nav toggle error', e); }
+
+  // Header scroll state
+  try {
+    var header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  } catch (e) { console.error('header scroll error', e); }
+
+  // Enquiry-type presets: scroll to form and pre-select the category
+  try {
+    document.querySelectorAll('[data-enquiry-type]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var type = btn.getAttribute('data-enquiry-type');
+        var select = document.getElementById('enquiryType');
+        if (select) select.value = type;
+        var target = document.getElementById('enquire');
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(function () {
+          var nameField = document.getElementById('enquiryName');
+          if (nameField) nameField.focus({ preventScroll: true });
+        }, 550);
+      });
+    });
+  } catch (e) { console.error('enquiry preset error', e); }
+
+  // Booking links — stubbed until the real tee-time system is connected
+  try {
+    function showToast(message) {
+      var toast = document.getElementById('toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast';
+        toast.className = 'toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        document.body.appendChild(toast);
+      }
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(function () { toast.classList.remove('show'); }, 3500);
+    }
+    document.querySelectorAll('.js-booking-link').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        showToast('This connects straight to your existing tee-time booking system.');
+      });
+    });
+  } catch (e) { console.error('booking toast error', e); }
+
+  // Enquiry form — front-end only for now, no backend wired up yet
+  try {
+    var enquiryForm = document.getElementById('enquiryForm');
+    var enquiryFormWrap = document.getElementById('enquiryFormWrap');
+    var enquirySuccess = document.getElementById('enquirySuccess');
+    var enquiryReset = document.getElementById('enquiryReset');
+
+    enquiryForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // TODO: replace this with a real submission once the backend exists —
+      // e.g. fetch('/api/enquiries', { method: 'POST', body: new FormData(enquiryForm) })
+      // Danygraig's /enquire route is a reasonable pattern to follow here.
+      enquiryFormWrap.hidden = true;
+      enquirySuccess.hidden = false;
+      enquirySuccess.focus();
+    });
+
+    enquiryReset.addEventListener('click', function () {
+      enquiryForm.reset();
+      enquirySuccess.hidden = true;
+      enquiryFormWrap.hidden = false;
+    });
+  } catch (e) { console.error('enquiry form error', e); }
+
+  // Gallery lightbox
+  try {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.gallery-grid .g-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var full = item.getAttribute('data-full');
+        var img = item.querySelector('img');
+        lightboxImg.src = full || img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+  } catch (e) { console.error('lightbox error', e); }
+
+  // Scroll-reveal animation, with a safe fallback if it fails or is unsupported
+  try {
+    var revealEls = document.querySelectorAll('.reveal');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  } catch (e) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  // Footer year
+  try {
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  } catch (e) { console.error('footer year error', e); }
+</script>
+</body>
+</html>
