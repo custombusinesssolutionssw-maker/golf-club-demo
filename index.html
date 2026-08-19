@@ -236,6 +236,8 @@
   .footer-col a,.footer-col p{font-size:.9rem;color:rgba(246,241,228,.7);}
   .footer-col a:hover{color:var(--brass-300);}
   .footer-bottom{position:relative;z-index:1;border-top:1px solid rgba(246,241,228,.08);padding:22px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(246,241,228,.5);}
+  .footer-credit{transition:color .2s var(--ease);}
+  .footer-credit:hover{color:var(--brass-300);}
   @media (max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;}}
   @media (max-width:520px){.footer-grid{grid-template-columns:1fr;}}
 
@@ -679,7 +681,7 @@
       </div>
       <div class="footer-bottom">
         <span>© <span id="year"></span> Golf Club. All rights reserved.</span>
-        <span>Site by Tenet Digital Services</span>
+        <a href="https://tenetdigitalservices.co.uk/" target="_blank" rel="noopener noreferrer" class="footer-credit">Site by Tenet Digital Services</a>
       </div>
     </div>
   </footer>
