@@ -116,7 +116,7 @@
 
   /* ===== HERO ===== */
   .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;}
-  .hero-media{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.04);}
+  .hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;background-size:cover;background-position:center;transform:scale(1.04);}
   .hero-overlay{position:absolute;inset:0;background:linear-gradient(185deg,rgba(18,38,28,.5) 0%,rgba(18,38,28,.68) 50%,rgba(18,38,28,.94) 100%);}
   .hero-content{position:relative;z-index:2;max-width:var(--container);margin-inline:auto;padding:150px 24px 90px;color:var(--ivory);animation:heroFade 1s var(--ease) both;}
   @keyframes heroFade{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
@@ -293,12 +293,9 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
-      <!-- Once drone footage is filmed, swap this div for a full-bleed video, e.g.
-      <video class="hero-media" autoplay muted loop playsinline poster="fallback-image.jpg">
-        <source src="course-flythrough.mp4" type="video/mp4">
+      <video class="hero-media" autoplay muted loop playsinline poster="drone-hero-poster.jpg">
+        <source src="drone-hero.mp4" type="video/mp4">
       </video>
-      .hero-overlay and .hero-content below don't need to change — only this media layer does. -->
-      <div class="hero-media" style="background-image:url('https://picsum.photos/seed/golfclubhero/1920/1080')"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1>Golf Club</h1>
